@@ -1,20 +1,25 @@
-// @ts-ignore
-import { getLyrics, getSong } from 'genius-lyrics-api'
+
+import { getLyrics, getSong, searchSong } from 'genius-lyrics-api'
 
 async function main() {
 
   const options = {
     apiKey: 'uY602sSAANTG2FZHaofCivl2sRqt0t4zsDwo1jcvhG3HSdcPZO1tr1cLkv7t2RCn',
     title: 'Sarah',
-    artist: 'Aelx G',
-    optimizeQuery: true
+    artist: 'alex g',
+    optimizeQuery: true,
+    authHeader: true
   };
 
-  getLyrics(options).then((lyrics: any) => {
+  getLyrics(options).then((lyrics) => {
     console.log(lyrics);
 
   });
-  console.log("Hello !!");
+  console.log("vvv");
+  Spicetify.PopupModal.display({
+    title: 'Hello World',
+    content: 'This is a simple text',
+});
 }
 
 export default main;
